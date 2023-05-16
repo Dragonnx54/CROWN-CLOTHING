@@ -1,4 +1,3 @@
-import { async } from "@firebase/util";
 import { useState } from "react";
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase.utils";
 import Button from "../button/button.component";
@@ -13,7 +12,7 @@ const defaultFormFields = {
 }
 
 const SignUpForm = () =>{
-    //returns two value [value, setValueFunction] = useState(DEFAULT VALUE)
+    //returns two values [value, setValueFunction] = useState(DEFAULT VALUE)
     const[formFields, setFormFields] = useState(defaultFormFields);
     const { displayName, email, password, confirmPassword } = formFields;
     

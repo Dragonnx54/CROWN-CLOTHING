@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from '../button/button.component';
 import FormInput from '../form-input/form-input.component';
-import { signInWithPassword, signInWithGooglePopup, createUserDocumentFromAuth, getCredentialFromResult } from '../../utils/firebase.utils';
+import { signInWithPassword, signInWithGooglePopup } from '../../utils/firebase.utils';
 import './sign-in-form.styles.scss';
 const defaultFormFields = {
     email: '',
@@ -21,9 +21,6 @@ const SignInForm = () =>{
             const result = await signInWithGooglePopup();
             const {user} = result;
             //const userDocRef = await createUserDocumentFromAuth(user);
-            await createUserDocumentFromAuth(user);
-            const token = user.accessToken;
-            console.log(user, token, result);
         }catch(error){
             console.log('an error occured', error)
         }
@@ -33,7 +30,6 @@ const SignInForm = () =>{
         try{
             let { user } = await signInWithPassword(email, password);
             let token = user.accessToken;
-            console.log(user, token);
         }catch(error){
             console.log(error);
             if( error.code === 'auth/invalid-email' || error.code === 'auth/wrong-password' || error.code === 'auth/user-not-found'){
