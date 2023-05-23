@@ -1,9 +1,7 @@
-import { auth,signInWithGooglePopup, createUserDocumentFromAuth, /*signInWithGoogleRedirect*/ } from "../../utils/firebase.utils";
-import { useEffect } from "react";
-import { getRedirectResult } from "firebase/auth";
+
 import SignUpForm from "../../components/sign-up-form/sign-up-form.component";
 import SignInForm from "../../components/sign-in-form/sign-in-form.component";
-import './authentication.styles.scss'
+import styles from './authentication.module.scss'
 
 const Authentication = () => {
     /*useEffect(() => {
@@ -32,7 +30,7 @@ const Authentication = () => {
     }*/
 
     return(
-        <div className="authentication-container">
+        <div className={`${styles.container}`}>
             {/*
             <h1>Sign in Page</h1>
             <button onClick={logGoogleUser}>

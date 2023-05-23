@@ -1,4 +1,4 @@
-.directory-item-container {
+.container {
     min-width: 30%;
     height: 240px;
     flex: 1 1 auto;
@@ -12,12 +12,12 @@
     &:hover {
         cursor: pointer;
 
-        & .background-image {
+        & .backgroundImage {
             transform: scale(1.1);
             transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
         }
 
-        & .category-body-container {
+        & .categoryBodyContainer {
             opacity: 0.9;
         }
     }
@@ -34,7 +34,7 @@
         margin-left: 7.5px;
     }
 
-    .background-image {
+    .backgroundImage {
         width: 100%;
         height: 100%;
         background-size: cover;

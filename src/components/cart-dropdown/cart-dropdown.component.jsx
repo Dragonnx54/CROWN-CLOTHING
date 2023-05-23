@@ -13,7 +13,7 @@ const CartDropdown = () => {
         navigate('checkout');
     }
     return (
-        <div className={`${styles.cartDropdownContainer}`}>
+        <div className={`${styles.container}`}>
             {
                 cartItems.length 
                 ? (

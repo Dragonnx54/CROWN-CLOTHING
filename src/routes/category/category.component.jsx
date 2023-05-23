@@ -2,11 +2,9 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import CategoriesPreview from '../../components/categories-preview/categories-preview.component';
-import CategoryPreview from '../../components/category-preview/category-preview.component';
 import ProductCard from '../../components/product-card/product-card.component';
 import { CategoriesContext } from '../../contexts/categories.context';
-import './category.styles.scss';
+import styles from './category.module.scss';
 
 const Category = () => {
     const { category } = useParams();
@@ -17,8 +15,8 @@ const Category = () => {
     }, [categoriesMap, category]);
     return(
         <div>
-            <h2 className='category-title'>{category.toUpperCase()}</h2>
-            <div className='category-container'>
+            <h2 className={`${styles.title}`}>{category.toUpperCase()}</h2>
+            <div className={`${styles.container}`}>
                 {
                     products &&
                     products.map((product) => <ProductCard product={product} key={product.id}/>)

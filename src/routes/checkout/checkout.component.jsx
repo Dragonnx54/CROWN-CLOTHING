@@ -1,29 +1,29 @@
 import { Fragment, useContext } from 'react';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import { CartContext } from '../../contexts/cart.context';
-import './checkout.styles.scss';
+import styles from './checkout.module.scss';
 
 const Checkout = () => {
     const { cartItems, cartTotal } = useContext(CartContext);
     return (
-        <div className='checkout-container'>
+        <div className={`${styles.container}`}>
             {
                 cartItems.length ? (
                     <Fragment>
-                        <div className='checkout-header'>
-                            <div className='header-block'>
+                        <div className={`${styles.checkoutHeader}`}>
+                            <div className={`${styles.headerBlock}`}>
                                 <span>{'Product'}</span>
                             </div>
-                            <div className='header-block'>
+                            <div className={`${styles}`}>
                                 <span>{'Description'}</span>
                             </div>
-                            <div className='header-block'>
+                            <div className={`${styles}`}>
                                 <span>{'Quantity'}</span>
                             </div>
-                            <div className='header-block'>
+                            <div className={`${styles}`}>
                                 <span>{'Price'}</span>
                             </div>
-                            <div className='header-block'>
+                            <div className={`${styles}`}>
                                 <span>{'Remove'}</span>
                             </div>
                         </div>
@@ -31,7 +31,7 @@ const Checkout = () => {
                             <CheckoutItem cartItem={cartItem} key={cartItem.id}/>
                         ))}
                         
-                        <span className='total'>{`Total $${cartTotal}`}</span>
+                        <span className={`${styles.total}`}>{`Total $${cartTotal}`}</span>
                     </Fragment>
                 ) : (
                     <span>{'No items added yet'}</span>

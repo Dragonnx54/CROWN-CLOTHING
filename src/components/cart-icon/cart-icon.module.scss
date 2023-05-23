@@ -1,4 +1,4 @@
-.cart-icon-container {
+.container {
     width: 45px;
     height: 45px;
     position: relative;
@@ -7,12 +7,12 @@
     justify-content: center;
     cursor: pointer;
   
-    .shopping-icon {
+    .shoppingIcon {
       width: 24px;
       height: 24px;
     }
   
-    .item-count {
+    .itemCount {
       position: absolute;
       font-size: 10px;
       font-weight: bold;
