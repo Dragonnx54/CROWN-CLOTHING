@@ -1,4 +1,4 @@
-.cart-dropdown-container {
+.cartDropdownContainer {
     position: absolute;
     width: 240px;
     height: 340px;
@@ -11,12 +11,12 @@
     right: 40px;
     z-index: 5;
   
-    .empty-message {
+    .emptyMessage {
       font-size: 18px;
       margin: 50px auto;
     }
   
-    .cart-items {
+    .cartItems {
       height: 240px;
       display: flex;
       flex-direction: column;
@@ -25,6 +25,9 @@
   
     button {
       margin-top: auto;
+    }
+    .googleSignIn{
+      background-color: red !important;
     }
 }
   
