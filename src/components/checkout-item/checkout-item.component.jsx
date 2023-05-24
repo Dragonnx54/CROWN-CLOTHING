@@ -18,7 +18,7 @@ const CheckoutItem = ({cartItem}) => {
             <span className={`${styles.name}`}>{name}</span>
             
             <span className={`${styles.quantity}`}>
-                <div onClick={removeItemHandler} className={`${styles}.arrow`}>&#10094;</div>
+                <div onClick={removeItemHandler} className={`${styles.arrow}`}>&#10094;</div>
                 <span className={`${styles.value}`}>{quantity}</span>
                 <div onClick={addItemHandler} className={`${styles.arrow}`}>&#10095;</div>
             </span>

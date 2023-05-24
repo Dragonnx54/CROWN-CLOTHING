@@ -14,16 +14,16 @@ const Checkout = () => {
                             <div className={`${styles.headerBlock}`}>
                                 <span>{'Product'}</span>
                             </div>
-                            <div className={`${styles}`}>
+                            <div className={`${styles.headerBlock}`}>
                                 <span>{'Description'}</span>
                             </div>
-                            <div className={`${styles}`}>
+                            <div className={`${styles.headerBlock}`}>
                                 <span>{'Quantity'}</span>
                             </div>
-                            <div className={`${styles}`}>
+                            <div className={`${styles.headerBlock}`}>
                                 <span>{'Price'}</span>
                             </div>
-                            <div className={`${styles}`}>
+                            <div className={`${styles.headerBlock}`}>
                                 <span>{'Remove'}</span>
                             </div>
                         </div>
