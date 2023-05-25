@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+/* import { useReducer } from "react";
 import { useEffect } from "react";
 import { createContext, useState } from "react";
 import { createAction } from "../utils/reducer/reducer.utils";
@@ -68,10 +68,10 @@ const INITIAL_STATE = {
 }
 
 export const CartProvider = ({children}) => {
-    /*const [isCartOpen, setIsCartOpen] = useState(false);
-    const [cartItems, setCartItems] = useState([]);
-    const [cartCount, setCartCount] = useState([]);
-    const [cartTotal, setTotal] = useState(0);*/
+    //const [isCartOpen, setIsCartOpen] = useState(false);
+    //const [cartItems, setCartItems] = useState([]);
+    //const [cartCount, setCartCount] = useState([]);
+    //const [cartTotal, setTotal] = useState(0);
     const [{isCartOpen, cartItems, cartCount, cartTotal}, dispatch] = useReducer(cartReducer, INITIAL_STATE);
 
     const toggleIsCartOpen = () => dispatch(createAction(CART_ACTION_TYPE.SET_CART_OPEN, !isCartOpen));
@@ -88,15 +88,15 @@ export const CartProvider = ({children}) => {
         updateCartItemsReducer(newCartItems);
     }
 
-    /*useEffect(()=>{
-        const newCartCount = cartItems.reduce((acc, element)=> element.quantity + acc, 0);
-        dispatch({type: CART_ACTION_TYPE.SET_CART_COUNT, payload: newCartCount});
-    }, [cartItems])
+    //useEffect(()=>{
+    //    const newCartCount = cartItems.reduce((acc, element)=> element.quantity + acc, 0);
+    //    dispatch({type: CART_ACTION_TYPE.SET_CART_COUNT, payload: newCartCount});
+    //}, [cartItems])
 
-    useEffect(()=>{
-        const newCartTotal = cartItems.reduce( (acc, cartItem) => (cartItem.quantity * cartItem.price) + acc, 0 );
-        dispatch({type: CART_ACTION_TYPE.SET_CART_TOTAL, payload: newCartTotal});
-    }, [cartItems])*/
+    //useEffect(()=>{
+    //    const newCartTotal = cartItems.reduce( (acc, cartItem) => (cartItem.quantity * cartItem.price) + acc, 0 );
+    //    dispatch({type: CART_ACTION_TYPE.SET_CART_TOTAL, payload: newCartTotal});
+    //}, [cartItems])
 
     const updateCartItemsReducer = (newCartItems) =>{
         const newCartCount = newCartItems.reduce((acc, element)=> element.quantity + acc, 0);
@@ -112,4 +112,4 @@ export const CartProvider = ({children}) => {
     const value = { isCartOpen, toggleIsCartOpen, cartItems, addItemToCart, cartCount, clearItemFromCart, removeItemFromCart, cartTotal};
 
     return <CartContext.Provider value={value}>{children}</CartContext.Provider>
-}
+} */

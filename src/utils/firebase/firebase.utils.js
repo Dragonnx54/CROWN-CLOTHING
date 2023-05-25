@@ -101,10 +101,11 @@ export const getCategoriesAndDocuments = async () =>{
   const q = query(collectionRef);
   //centralize all firebase methods to adapt it in one place instead of changing multiple files
   const querySnapshot = await getDocs(q);
-  const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
+  return querySnapshot.docs.map(docsnapshot => docsnapshot.data());
+  /*const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
     const { title, items } = docSnapshot.data();
     acc[title.toLowerCase()] = items;
     return acc;
   }, {});
-  return categoryMap;
+  return categoryMap;*/
 }
