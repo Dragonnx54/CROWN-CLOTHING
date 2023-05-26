@@ -4,8 +4,7 @@ const INITIAL_STATE = {
     currentUser: null
 }
 
-export const userReducer = (state = INITIAL_STATE, action) =>{
-    console.log(action, 'dispatched');
+export const userReducer = (state = INITIAL_STATE, action = {}) =>{
     const {type, payload } = action;
     switch(type){
         case USER_ACTION_TYPES.SET_CURRENT_USER:

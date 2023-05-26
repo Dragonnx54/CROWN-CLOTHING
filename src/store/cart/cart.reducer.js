@@ -5,7 +5,7 @@ const INITIAL_STATE = {
     cartItems: []
 }
 
-export const cartReducer = (state = INITIAL_STATE, action) => {
+export const cartReducer = (state = INITIAL_STATE, action = {}) => {
     const { type, payload} = action;
     switch(type){
         case CART_ACITON_TYPES.SET_CART_OPEN:
