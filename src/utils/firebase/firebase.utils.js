@@ -58,7 +58,7 @@ export const createUserDocumentFromAuth = async (userAuth, aditionalInformation 
       console.log('error creating the user', error.message);
     }
   }
-  return userDocRef;
+  return userSnapshot;
   //if user doesnt exist
   // create/ set the docment with the data from user auth in collection
   //check if user data exists
@@ -108,4 +108,17 @@ export const getCategoriesAndDocuments = async () =>{
     return acc;
   }, {});
   return categoryMap;*/
+}
+
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) =>{
+    const unsubscribe = onAuthStateChanged(
+      auth,
+      (userAuth) =>{
+        unsubscribe();
+        resolve(userAuth);
+      },
+      reject
+    )
+  })
 }
