@@ -1,4 +1,0 @@
-export const CART_ACITON_TYPES = {
-    SET_CART_OPEN: 'cart/SET_CART_OPEN',
-    SET_CART_ITEMS: 'cart/SET_CART_ITEMS',
-}
