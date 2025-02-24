@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { FC, ReactNode, ButtonHTMLAttributes } from 'react';
 import styles from './button.module.scss';
 /*
     default
@@ -14,17 +14,16 @@ type TYPE_CLASSES = {
 
 const BUTTON_TYPE_CLASSES: TYPE_CLASSES = {
     base: '',
-    google: styles.googleSignIn as string,
-    inverted: styles.inverted as string
+    google: styles.googleSignIn,
+    inverted: styles.inverted
 }
 
-type ButtonProps = {
-    children?: ReactNode,
-    buttonType?: keyof TYPE_CLASSES,
-    [key: string]: any
-}
+export type ButtonProps = {
+    children?: ReactNode
+    buttonType?: keyof TYPE_CLASSES
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button = ({ children, buttonType, ...otherProps }: ButtonProps) =>{
+const Button: FC<ButtonProps> = ({ children, buttonType, ...otherProps }) =>{
     let buttonTypeClass = buttonType || 'base';
     return(
         <button className={`${styles.container} ${BUTTON_TYPE_CLASSES[buttonTypeClass]}`} {...otherProps}>

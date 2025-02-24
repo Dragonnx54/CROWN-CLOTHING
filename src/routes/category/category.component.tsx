@@ -8,20 +8,23 @@ import styles from './category.module.scss';
 import Spinner from '../../components/spinner/spinner.component'
 import { CategoryItem } from '../../store/categories/cateogry.types';
 
+type CategoryRouteParams = {
+    category: string
+}
+
 const Category = () => {
-    const { category } = useParams();
-    const categoryParam = category ?? '';
+    const { category } = useParams<keyof CategoryRouteParams>() as CategoryRouteParams;
     const isLoading = useSelector( selectIsLoading );
     const categoriesMap = useSelector( selectCategoriesMap );
-    const [ products, setProducts ] = useState(categoriesMap[categoryParam] as CategoryItem[]);
+    const [ products, setProducts ] = useState(categoriesMap[category] as CategoryItem[]);
     useEffect(() =>{
-        setProducts( categoriesMap[categoryParam] );
+        setProducts( categoriesMap[category] );
     }, [categoriesMap, category]);
     return(
         <div>
             {isLoading ? <Spinner /> : 
                 <Fragment>
-                    <h2 className={`${styles.title}`}>{categoryParam.toUpperCase()}</h2>
+                    <h2 className={`${styles.title}`}>{category.toUpperCase()}</h2>
                     <div className={`${styles.container}`}>
                         {
                             products &&

@@ -36,7 +36,7 @@ const SignInForm = () =>{
         }*/
     }
 
-    const handleSubmit = async (event: FormEvent) => {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if( !validateForm() ){
             alert('Please fill all the fields');
